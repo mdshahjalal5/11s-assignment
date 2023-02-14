@@ -6,7 +6,8 @@ const port = process.env.PORT || 5500;
 app.use(cors())
 app.use(express.json())
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
-const uri = "mongodb+srv://11-assignment:zdAnPa5vJSi3vP8v@cluster0.ckb7hbl.mongodb.net/?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.ckb7hbl.mongodb.net/?retryWrites=true&w=majority`;
+console.log(uri, 'uri')
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 const services = client.db("11-assignment").collection("services2");
 const orders = client.db("11-assignment").collection("orders");
