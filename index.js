@@ -21,7 +21,7 @@ async function run() {
             const filter = {
                 _id: new ObjectId(id)
             }
-            const serviceData =await services.findOne(filter)
+            const serviceData =await services.findOne(filter);
             s.send({serviceData})
         })
         app.post('/orders', function(q, s){
