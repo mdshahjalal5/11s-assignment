@@ -36,7 +36,7 @@ async function run() {
             console.log(query, 'query ')
              const singleOrder =  await orders.findOne(query)
              console.log(singleOrder, 'singleorder fs')
-            s.send(singleOrder);
+            s.send(singleOrder)
         })
         app.get('/orders', async (q,s)=>{
             let query = {}
