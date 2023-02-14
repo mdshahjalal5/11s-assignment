@@ -14,7 +14,7 @@ async function run() {
         app.get('/services', async function named(q, s){
             const limit = parseInt(q.query.limit); 
              const servicesData = await services.find({}).limit(limit).toArray();
-            s.send({ servicesData })
+            s.send({ servicesData });
         })
         app.get('/service/:id', async (q, s)=>{
             const id =  q.params.id;
